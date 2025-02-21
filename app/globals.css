@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+/* Add RTL support */
+.rtl-support {
+  direction: rtl;
+}
+
+.rtl-support input,
+.rtl-support textarea {
+  text-align: right;
+}
+
+.rtl-support .recharts-wrapper {
+  direction: ltr;
+}
+
+/* Ensure proper padding for RTL input fields */
+.rtl-support input,
+.rtl-support textarea {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+/* Adjust icon placement for RTL */
+.rtl-support .icon-left {
+  right: 0.75rem;
+  left: auto;
+}
+
+.rtl-support .icon-right {
+  left: 0.75rem;
+  right: auto;
+}
+
+/* Ensure proper text overflow for RTL */
+.rtl-support .truncate {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Adjust flexbox order for RTL layouts */
+.rtl-support .flex-row {
+  flex-direction: row-reverse;
+}
+
+.rtl-support .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Ensure proper alignment for RTL tables */
+.rtl-support table {
+  text-align: right;
+}
+
+.rtl-support th,
+.rtl-support td {
+  text-align: right;
+}
+
+/* Adjust margin and padding for RTL */
+.rtl-support .mr-2 {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.rtl-support .ml-2 {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.rtl-support .pr-2 {
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+
+.rtl-support .pl-2 {
+  padding-right: 0.5rem;
+  padding-left: 0;
+}
+
